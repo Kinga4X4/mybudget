@@ -1,20 +1,25 @@
 package pl.kinga.budget;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Transaction {
     private Integer id;
     private Type type;
     private String description;
-    private int amount;
-    private LocalDate date;
+    private double amount;
+    private Date date;
 
-    public Transaction(Integer id, Type type, String description, int amount, LocalDate date) {
+    public Transaction(Integer id, Type type, String description, double amount, Date date) {
         this.id = id;
         this.type = type;
         this.description = description;
         this.amount = amount;
         this.date = date;
+    }
+
+    public Transaction(Type type, String description, double amount, Date date) {
+        this(null, type, description, amount, date);
     }
 
     public Integer getId() {
@@ -41,19 +46,19 @@ public class Transaction {
         this.description = description;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
