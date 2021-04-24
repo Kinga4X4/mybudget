@@ -20,7 +20,7 @@ public class TransactionAdd {
         System.out.println("Podaj datę transakcji");
         String date = scanner.nextLine();
 
-        Transaction transaction = new Transaction(type, description, amount, date);
+        Transaction transaction = new Transaction( description, amount, date);
         TransactionDao transactionDao = new TransactionDao();
         transactionDao.addTransaction(transaction);
     }
