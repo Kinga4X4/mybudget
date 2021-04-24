@@ -1,7 +1,9 @@
 package pl.kinga.budget;
 
 import java.sql.*;
+
 public class TransactionDao {
+
     private Connection connection;
 
     void run() {
@@ -71,10 +73,10 @@ public class TransactionDao {
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE transaction SET type = ?, description = ?, amount = ?, date = ? where id = ?");
-            preparedStatement.setString(1, transaction.getType() );
+            preparedStatement.getResultSetType();
             preparedStatement.setString(2, transaction.getDescription());
             preparedStatement.setDouble(3, transaction.getAmount());
-            preparedStatement.setString(4, transaction.getDate());
+            preparedStatement.setDate(4, transaction.getDate());
             int rowsChanged = preparedStatement.executeUpdate();
             System.out.println("zaktualizowane rekordy" + " " + rowsChanged);
 
@@ -89,7 +91,7 @@ public class TransactionDao {
             preparedStatement.setString(1, transaction.getType());
             preparedStatement.setString(2, transaction.getDescription());
             preparedStatement.setDouble(3, transaction.getAmount());
-            preparedStatement.setString(4, transaction.getDate());
+            preparedStatement.setDate(4, transaction.getDate());
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
