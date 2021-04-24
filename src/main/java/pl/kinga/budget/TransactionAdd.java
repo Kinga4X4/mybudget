@@ -12,12 +12,12 @@ public class TransactionAdd {
             type1.name();
         }
         String type1 = scanner.nextLine();
-        System.out.println("Podaj opis transakcji");
+        System.out.println("Podaj opis transakcji.");
         String description = scanner.nextLine();
-        System.out.println("Podaj kwotę transakcji");
+        System.out.println("Podaj kwotę transakcji.");
         double amount = scanner.nextDouble();
         scanner.nextLine();
-        System.out.println("Podaj datę transakcji");
+        System.out.println("Podaj datę transakcji.");
         String date = scanner.nextLine();
 
         Transaction transaction = new Transaction( description, amount, date);
